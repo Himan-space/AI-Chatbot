@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.bg{
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(stroke.gif) center no-repeat #fff;
+	background-size: cover;
+}
+#button1 {
+  border: none;
+  text-align: center;
+font-weight:bold;
+font-size: 120%;
+  height:50%;
+  width:50%;
+  margin-left:25%;
+  margin-right:25%;
+margin-top:7%;
+margin-bottom:1%;
+padding:23%;
+padding-top:15%;
+border-radius: 50%;
+ background: rgb(255,255,255); 
+  background: rgba(255,255,255, 0.5);
+
+
+}
+#button1:hover {
+  box-shadow: 0 12px 16px 0 rgba(255,0,0,0.64), 0 17px 50px 0 rgba(255,0,0,0.54);
+color: transparent;
+background: url(bot.jpg) center no-repeat;
+background-size: cover;
+}
+
+</style>
+</head>
+<body>
+
+
+<div class='bg'>
+<button id='button1' onclick="myFunction()">Click Here to Chat with ChatBot</button>
+</div>
+<script>
+function myFunction() {
+  var myWindow = window.open("Stroke-Detection.html", "Stroke_Detection", "width=1360,height=490");
+}
+</script>
+
+</body>
+</html>
