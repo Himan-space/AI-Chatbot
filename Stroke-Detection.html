@@ -1,0 +1,63 @@
+<html>
+<head>
+<style>
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con{
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(loader.gif) center no-repeat #fff;
+	background-size: cover;
+}
+.bg{
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(stroke.gif) center no-repeat #fff;
+	background-size: cover;
+	visibility: hidden;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+</head>
+<body style="height: 100%;">
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "b46839f0-6ae2-4dcc-906e-ae781a7556e2", // The ID of this integration.
+      region: "eu-gb", // The region your integration is hosted in.
+      serviceInstanceID: "d1245d81-073d-49ed-89c9-2ac0e5c1dcec", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+
+//-------------
+function hideLoader() {
+    $('.se-pre-con').fadeIn("veryslow");
+}
+$(window).ready(hideLoader);
+setTimeout(function(){
+  $('.se-pre-con').fadeOut("slow");
+}, 2000);
+
+setTimeout(function(){
+  $('.bg').css("visibility", "visible");
+}, 2000);
+
+</script>
+<div class="se-pre-con"></div>
+<div class='bg'></div>
+<div class="ibm-web-chat-card-home-screen"></div>
+</body>
+</html>
